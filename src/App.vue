@@ -1,26 +1,44 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <main className="app">
+            <div className="content">
+              <HeroesList/>
+                <div className="content__interactive">
+                    <HeroesAddForm/>
+                    <HeroesFilters/>
+                </div>
+            </div>
+        </main>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HeroesAddForm from './components/HeroesAddForm.vue';
+import HeroesList from './components/HeroesList.vue';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
+     HeroesAddForm, HeroesList
+  },
+  async mounted() {
+    this.$store.dispatch('requestHeroes');
+    }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  .app {
+    height: 100vh;
+    overflow-y: scroll;
+    background: url('./assets/hero_bg.jpg') center / cover no-repeat;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 560px 440px;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding-top: 50px;
+    &__interactive {
+        padding-left: 40px;
+    }
 }
 </style>
