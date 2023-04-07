@@ -13,13 +13,14 @@
 </template>
  
 <script>
-import {mapGetters} from 'vuex';
+import {mapGetters, mapMutations} from 'vuex';
 import HeroesListItem from './HeroesListItem.vue';
     export default {
         components: {
             HeroesListItem
         },
         computed: mapGetters(['allHeroes']),
+        // methods: mapMutations(['filteredHeroes']),
         // computed: {
         //     allHeroes() {
         //         return this.$store.getters.allHeroes

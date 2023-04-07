@@ -13,10 +13,10 @@
 <script>
 import HeroesAddForm from './components/HeroesAddForm.vue';
 import HeroesList from './components/HeroesList.vue';
-
+import HeroesFilters from './components/HeroesFiters.vue';
 export default {
   components: {
-     HeroesAddForm, HeroesList
+     HeroesAddForm, HeroesFilters,HeroesList
   },
   async mounted() {
     this.$store.dispatch('requestHeroes');
