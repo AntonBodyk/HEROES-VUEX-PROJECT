@@ -9,7 +9,7 @@
                     name="name" 
                     className="form-control" 
                     id="name" 
-                    placeholder="Введите элемент"/>
+                    placeholder="Введите элемент(на английском)"/>
             </div>
         </div>
 </template>
